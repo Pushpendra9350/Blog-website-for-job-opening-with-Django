@@ -22,9 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
-#SECRET_KEY = "django-insecure-ge!esm@!9)+0f9qty4eq)-ymp!&3xm4d1!xtu+#-iefmhp%7c0"
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['django-job-blog-app.herokuapp.com','0.0.0.0','127.0.0.1']
 
