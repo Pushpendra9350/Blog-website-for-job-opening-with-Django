@@ -1,2 +1,3 @@
 ## Blogging website to update new job openings 
-this website is under process
+### Live Demo: https://django-job-blog-app.herokuapp.com/
+check this out
