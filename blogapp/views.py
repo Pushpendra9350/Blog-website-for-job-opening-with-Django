@@ -11,21 +11,6 @@ from django.views.generic import(
     )
 # Create your views here.
 
-posts=[
-    {
-        "author": "Pushpendra Kumar",
-        "publish_date":"18/02/1998",
-        "title":"this is a title",
-        "content":"this is a descritption"
-    },
-    {
-        "author": "Pushpendra Kumar",
-        "publish_date":"18/02/1998",
-        "title":"this is a second title",
-        "content":"this is a second descritption"
-    }
-]
-
 def home(request):
     context = {
         "posts":Post.objects.all()
