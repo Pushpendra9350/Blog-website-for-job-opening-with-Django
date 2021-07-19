@@ -1,0 +1,8 @@
+{% extends "blogapp/baselayout.html" %}
+{% block content %}
+    <h4 style="color: rgb(8, 161, 54);font-weight:bold">Logged out</h4>
+    <div class="border-top pt-3">
+        <small class="text-muted"><a href="{% url 'login' %}">Login again</a></small>
+        <small class="text-muted"><a href="{% url 'blog-home' %}"> | Home</a></small>
+    </div>
+{% endblock %}
