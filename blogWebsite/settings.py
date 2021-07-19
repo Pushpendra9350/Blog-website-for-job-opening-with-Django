@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import psycopg2 as Database
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ge!esm@!9)+0f9qty4eq)-ymp!&3xm4d1!xtu+#-iefmhp%7c0'
-
+SECRET_KEY = os.environ(['SECRET_KEY'])
+#SECRET_KEY = "django-insecure-ge!esm@!9)+0f9qty4eq)-ymp!&3xm4d1!xtu+#-iefmhp%7c0"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-job-blog-app.herokuapp.com']
+ALLOWED_HOSTS = ['django-job-blog-app.herokuapp.com','0.0.0.0','127.0.0.1']
 
 
 # Application definition
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -78,11 +80,15 @@ WSGI_APPLICATION = 'blogWebsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd5obk56pds2a6c',
+        'HOST': 'ec2-34-200-94-86.compute-1.amazonaws.com',
+        'PORT':5432,
+        'USER':'wsfrqgnxsvdfso',
+        'PASSWORD':'46e01bd20acf0847a00e1762410e965012c621a20769c87b8daf126583f91c9d'
+
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
