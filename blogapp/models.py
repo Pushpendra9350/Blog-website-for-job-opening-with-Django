@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 # Create your models here.
 
+# This our post model to store posts 
 class Post(models.Model):
     """
     # Here we are using only 100 length content for the title of the blog post

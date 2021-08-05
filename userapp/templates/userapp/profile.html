@@ -9,10 +9,14 @@
                 <p class="secondary-text">{{user.email}}</p>
             </div>
         </div>
+        <!-- Form to update the profile we have this form -->
         <form method="POST" enctype="multipart/form-data">
+
+            <!-- we write csrf token we send a post rquest for security resons -->
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Profile Info</legend>
+                <!-- Render both form as send by the views -->
                 {{u_form|crispy}}
                 {{p_form|crispy}}
             </fieldset>

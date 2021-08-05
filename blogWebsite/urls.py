@@ -20,6 +20,7 @@ from userapp import views as user_app_view
 from django.conf import settings
 from django.conf.urls.static import static
 
+# All urls for apps and admin
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("register/",user_app_view.register,name="register"),
